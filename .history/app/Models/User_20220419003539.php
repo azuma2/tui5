@@ -18,8 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name' => 'required|max:20',
-        'email' => 'email:rfc,dns',
+        'name',
+        'email' => 'email:rfc,dns'
         'password' => 'min:6',
     ];
 
