@@ -48,7 +48,7 @@ public function store(Request $request)
 
   public function show(Request $request)
   {
-    $item = Post::find($contact);
+    $item = Contact::find($contact);
     if ($item) {
       return response()->json([
         'data' => $item

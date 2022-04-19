@@ -24,6 +24,7 @@ public function store(Request $request)
 
 public function show(Comment $comment)
 {
+    $item = Comment::find($contact);
     $item = Comment::find($comment);
     if ($item) {
     return response()->json([
