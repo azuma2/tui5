@@ -15,16 +15,16 @@ class PostController extends Controller
 
 public function store(Request $request)
 {
-    $item = Like::create($request->all());
+    $item = Contact::create($request->all());
     return response()->json([
     'data' => $item
     ], 201);
 }
 
 
-public function destroy(Request $request)
+public function destroy(Like $contact)
 {
-    $item = Like::where('id', $request->id)->delete();
+    $item = Contact::where('id', $contact->id)->delete();
     if ($item) {
     return response()->json([
         'message' => 'Deleted successfully',

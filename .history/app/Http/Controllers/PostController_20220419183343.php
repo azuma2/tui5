@@ -22,7 +22,7 @@ class PostController extends Controller
 
 public function store(Request $request)
   {
-    $item = Post::create($request->all());
+    $item = Contact::create($request->all());
     return response()->json([
       'data' => $item
     ], 201);

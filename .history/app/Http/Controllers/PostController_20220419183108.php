@@ -22,7 +22,7 @@ class PostController extends Controller
 
 public function store(Request $request)
   {
-    $item = Post::create($request->all());
+    $item = Contact::create($request->all());
     return response()->json([
       'data' => $item
     ], 201);
@@ -30,9 +30,9 @@ public function store(Request $request)
 
 
 
-  public function destroy(Request $reques)
+  public function destroy(Contact $contact)
   {
-    $item = Post::where('id', $reques->id)->delete();
+    $item = Post::where('id', $contact->id)->delete();
     if ($item) {
       return response()->json([
         'message' => 'Deleted successfully',
