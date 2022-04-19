@@ -32,7 +32,7 @@ public function store(Request $request)
 
   public function destroy(Request $request)
   {
-    $item = Post::where('id', $request->id)->delete();
+    $item = Post::where('id', $reques->id)->delete();
     if ($item) {
       return response()->json([
         'message' => 'Deleted successfully',
@@ -48,7 +48,7 @@ public function store(Request $request)
 
   public function show(Post $post)
   {
-    $item = Post::find($post);
+    $item = Post::find($contact);
     if ($item) {
       return response()->json([
         'data' => $item
