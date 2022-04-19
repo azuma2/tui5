@@ -14,7 +14,7 @@ class PostController extends Controller
 
 
 public function store(Request $request)
-{
+  {
     $item = Contact::create($request->all());
     return response()->json([
     'data' => $item

@@ -20,13 +20,16 @@ class PostController extends Controller
         ], 200);
     }
 
-public function store(Request $request)
-  {
-    $item = Contact::create($request->all());
-    return response()->json([
-      'data' => $item
-    ], 201);
-  }
+
+    public function create(Request $request)
+    {
+        $this->validate($request, Post::$rules);
+        $form = $request->all();
+        Post::create($form);
+        return response()->json([
+        redirect('/')
+        ], 200);
+    }
 
 
 

@@ -9,16 +9,8 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
-    public function index()
-    {
-        $items = Post::all();
-
-        return response()->json([
-        'items' => $items
-        ], 200);
-    }
 
 public function store(Request $request)
   {
@@ -26,22 +18,6 @@ public function store(Request $request)
     return response()->json([
       'data' => $item
     ], 201);
-  }
-
-
-
-  public function destroy(Contact $contact)
-  {
-    $item = Contact::where('id', $contact->id)->delete();
-    if ($item) {
-      return response()->json([
-        'message' => 'Deleted successfully',
-      ], 200);
-    } else {
-      return response()->json([
-        'message' => 'Not found',
-      ], 404);
-    }
   }
 
 
@@ -59,7 +35,5 @@ public function store(Request $request)
       ], 404);
     }
   }
-
-
 
   }

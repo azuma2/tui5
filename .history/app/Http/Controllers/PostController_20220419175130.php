@@ -20,32 +20,31 @@ class PostController extends Controller
         ], 200);
     }
 
-public function store(Request $request)
-  {
-    $item = Contact::create($request->all());
-    return response()->json([
-      'data' => $item
-    ], 201);
-  }
 
-
-
-  public function destroy(Contact $contact)
-  {
-    $item = Contact::where('id', $contact->id)->delete();
-    if ($item) {
-      return response()->json([
-        'message' => 'Deleted successfully',
-      ], 200);
-    } else {
-      return response()->json([
-        'message' => 'Not found',
-      ], 404);
+    public function create(Request $request)
+    {
+        $this->validate($request, Post::$rules);
+        $form = $request->all();
+        Post::create($form);
+        return response()->json([
+        redirect('/')
+        ], 200);
     }
-  }
 
 
 
+public function remove(Request $request)
+    {
+        Post::find($request->id)->delete();
+        return response()->json([
+        redirect('/')
+        ], 200);
+    }
+
+
+
+
+    
   public function show(Contact $contact)
   {
     $item = Contact::find($contact);

@@ -9,9 +9,8 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
-
 
 public function store(Request $request)
 {
@@ -22,20 +21,19 @@ public function store(Request $request)
 }
 
 
-public function destroy(Contact $contact)
+
+public function show(Contact $contact)
 {
-    $item = Contact::where('id', $contact->id)->delete();
+    $item = Contact::find($contact);
     if ($item) {
     return response()->json([
-        'message' => 'Deleted successfully',
+        'data' => $item
     ], 200);
     } else {
-    return response()->json([
+      return response()->json([
         'message' => 'Not found',
-    ], 404);
+      ], 404);
     }
-}
+  }
 
-
-
-}
+  }
