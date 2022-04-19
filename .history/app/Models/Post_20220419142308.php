@@ -17,8 +17,6 @@ class Post extends Model
         'content' => 'required|max:120',
     );
 
-        public function user(){ 
-        return $this->belongsTo('App\Models\user');
-    }
+    
 
 }

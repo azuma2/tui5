@@ -22,9 +22,4 @@ class Comment extends Model
         return $this->belongsTo('App\Models\user');
     }
 
-      public function post()
-  {
-    return $this->belongsTo(Post::class);
-  }
-
 }

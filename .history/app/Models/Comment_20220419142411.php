@@ -22,9 +22,9 @@ class Comment extends Model
         return $this->belongsTo('App\Models\user');
     }
 
-      public function post()
+      public function reply()
   {
-    return $this->belongsTo(Post::class);
+    return $this->belongsTo(Tui2::class);
   }
 
 }
