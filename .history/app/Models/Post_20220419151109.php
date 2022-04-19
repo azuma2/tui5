@@ -5,8 +5,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Comment;
-use App\Models\Like;
 
 class Post extends Model
 {
@@ -19,16 +17,10 @@ class Post extends Model
         'content' => 'required|max:120',
     );
 
-        public function user(){ 
-        return $this->belongsTo('App\Models\user');
-    }
 
-            public function comments(){ 
-        return $this->hasMany('App\Models\Comment');
-    }
 
-                public function Like(){ 
-        return $this->belongsTo(Like::class);
+            public function comment(){ 
+        return $this->belongsTo(Comment::class);
     }
 
 }
