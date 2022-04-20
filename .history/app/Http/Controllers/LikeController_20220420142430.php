@@ -8,9 +8,9 @@ use App\Models\Like;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PostController;
 
-class LikeController extends Controller
+class PostController extends Controller
 {
 
 

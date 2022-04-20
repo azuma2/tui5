@@ -23,6 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/like/{user_id}', 'LikeController@index')->name('9');
 
-Route::delete('/like/destroy/{id}', [LikeController::class, 'destroy']);
-
+Route::get('/like/destroy{user_id}', [LikeController::class, 'index'])->name('9');

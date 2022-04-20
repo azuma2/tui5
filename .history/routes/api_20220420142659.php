@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::post('/post/store', [PostController::class, 'store']);
@@ -22,7 +22,3 @@ Route::delete('/like/destroy', [LikeController::class, 'destroy']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-Route::delete('/like/destroy/{id}', [LikeController::class, 'destroy']);
-

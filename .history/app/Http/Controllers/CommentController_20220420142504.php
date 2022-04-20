@@ -8,27 +8,27 @@ use App\Models\Like;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PostController;
 
-class LikeController extends Controller
+class CommentController extends Controller
 {
-
 
 public function store(Request $request)
 {
-    $item = Like::create($request->all());
+    $item = Comment::create($request->all());
     return response()->json([
     'data' => $item
     ], 201);
 }
 
 
-public function destroy(Request $request)
+
+public function show(Comment $comment)
 {
-    $item = Like::where('id', $request->id)->delete();
+    $item = Comment::find($comment);
     if ($item) {
     return response()->json([
-        'message' => 'Deleted successfully',
+        'data' => $item
     ], 200);
     } else {
     return response()->json([
@@ -37,6 +37,4 @@ public function destroy(Request $request)
     }
 }
 
-
-
-}
+  }

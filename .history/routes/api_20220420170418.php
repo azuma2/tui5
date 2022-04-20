@@ -26,3 +26,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::delete('/like/destroy/{id}', [LikeController::class, 'destroy']);
 
+INSERT INTO people (id, name, age) VALUES (1,'Taro', 24);

@@ -18,8 +18,7 @@ class CreateCommentsTable extends Migration
             $table->integer('user_id');
             $table->integer('post_id');
             $table->string('content');
-            $table->timestamp('created_at')->useCurrent()->nullable();
-            $table->timestamp('updated_at')->useCurrent()->nullable();
+
         });
     }
 

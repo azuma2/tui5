@@ -24,5 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::delete('/like/destroy/{id}', [LikeController::class, 'destroy']);
-
+Route::get{'/{message}', 'UserController@index');
