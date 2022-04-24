@@ -3,7 +3,7 @@
 return [
 
 
-    Kreait\Laravel\Firebase\ServiceProvider::class,
+    
     /*
     |--------------------------------------------------------------------------
     | Application Name
