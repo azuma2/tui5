@@ -5,7 +5,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::post('/post/store', [PostController::class, 'store']);

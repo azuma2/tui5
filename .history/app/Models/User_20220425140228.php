@@ -19,7 +19,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'user_id' => 'integer',
-        'post_id' => 'integer',
         'name' => 'required|max:20',
         'email' => 'email:rfc,dns',
         'password' => 'min:6',
