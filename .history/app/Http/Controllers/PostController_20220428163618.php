@@ -14,7 +14,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $items = Post::with('user')->all();
+        $items = Post::all();
 
         return response()->json([
         'items' => $items
@@ -24,7 +24,6 @@ class PostController extends Controller
 public function store(Request $request)
   {
     $item = Post::create($request->all());
-    
     return response()->json([
       'data' => $item
     ], 201);

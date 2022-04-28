@@ -18,7 +18,7 @@ public function store(Request $request)
     $item = User::create($request->all());
     return response()->json([
     'name' => $item
-    
+    $items = Post::with('user')->all();
     ], 201);
 }
 

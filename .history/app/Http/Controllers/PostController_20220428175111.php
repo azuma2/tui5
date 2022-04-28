@@ -14,6 +14,7 @@ class PostController extends Controller
 {
     public function index()
     {
+        $items = Post::all();
         $items = Post::with('user')->all();
 
         return response()->json([
