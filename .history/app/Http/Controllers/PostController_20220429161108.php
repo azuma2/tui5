@@ -52,6 +52,7 @@ public function store(Request $request)
 
   public function show(Post $post)
   {
+    $item = Post::find($post);
     $item = Post::with(['user', 'comments'])->find($post)->first();
     if ($item) {
       return response()->json([

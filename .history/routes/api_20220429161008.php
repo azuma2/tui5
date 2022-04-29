@@ -31,3 +31,4 @@ Route::delete('/post/destroy/{id}', [PostController::class, 'destroy']);
 
 
 Route::post('/user/store', [UserController::class, 'store']);
+Route::get('/user/show', [UserController::class, 'show']);

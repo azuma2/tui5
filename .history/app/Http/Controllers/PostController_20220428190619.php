@@ -14,7 +14,7 @@ class PostController extends Controller
 {
     public function index()
     {
-
+        $items = Post::with('user')->all();
         $items = Post::with('user')->get();
 
         return response()->json([
@@ -52,7 +52,7 @@ public function store(Request $request)
 
   public function show(Post $post)
   {
-    $item = Post::with(['user', 'comments'])->find($post)->first();
+    $item = Post::find($post);
     if ($item) {
       return response()->json([
         'data' => $item
