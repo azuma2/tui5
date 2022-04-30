@@ -70,6 +70,7 @@ public function relate(Request $request)
         return response()->json([
         'items' => $items
       ], 404);
+        return view('author.index', ['items' => $items]);
     }
 
   }

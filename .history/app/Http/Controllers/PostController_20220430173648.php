@@ -64,12 +64,12 @@ public function store(Request $request)
     }
   }
 
-public function relate(Request $request) 
+public function relate(Request $request) //追記
     {
-        $items = Like::all();
-        return response()->json([
-        'items' => $items
-      ], 404);
+        $hasItems = Author::has('book')->get();
+        $noItems = Author::doesntHave('book')->get();
+        $param = ['hasItems' => $hasItems, 'noItems' => $noItems];
+        return view('author.index',$param);
     }
 
   }

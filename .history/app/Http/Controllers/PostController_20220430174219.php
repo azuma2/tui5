@@ -68,8 +68,9 @@ public function relate(Request $request)
     {
         $items = Like::all();
         return response()->json([
-        'items' => $items
+        'message' => 'Not found',
       ], 404);
+        return view('author.index', ['items' => $items]);
     }
 
   }

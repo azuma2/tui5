@@ -64,12 +64,6 @@ public function store(Request $request)
     }
   }
 
-public function relate(Request $request) 
-    {
-        $items = Like::all();
-        return response()->json([
-        'items' => $items
-      ], 404);
-    }
+
 
   }

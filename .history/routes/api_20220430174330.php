@@ -33,4 +33,4 @@ Route::delete('/post/destroy/{id}', [PostController::class, 'destroy']);
 Route::post('/user/store', [UserController::class, 'store']);
 
 
-Route::get('/relation', [POstController::class, 'relate']);
+Route::get('/relation', [AuthorController::class, 'relate']);
