@@ -18,11 +18,6 @@ class LikesTableSeeder extends Seeder
             'user_id' => 1,
             'post_id' => 1,
         ];
-        DB::table('like')->insert($item);
-        $item = [
-            'user_id' => 2,
-            'post_id' => 2,
-        ];
-        DB::table('like')->insert($item);
+        
     }
 }

@@ -20,9 +20,9 @@ class LikesTableSeeder extends Seeder
         ];
         DB::table('like')->insert($item);
         $item = [
-            'user_id' => 2,
-            'post_id' => 2,
+            'name' => 'jack',
+            'age' => 20,
+            'nationality' => 'British'
         ];
-        DB::table('like')->insert($item);
     }
 }
