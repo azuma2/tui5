@@ -22,6 +22,6 @@ class PostsTableSeeder extends Seeder
             'user_id' => 2,
             'content' => 'ぶｒｙｄさ',
         ];
-        DB::table('posts')->insert($item);
+        DB::table('post')->insert($item);
     }
 }

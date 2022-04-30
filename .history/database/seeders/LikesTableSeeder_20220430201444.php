@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class PostsTableSeeder extends Seeder
+class LikesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,15 +13,16 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        
         $item = [
             'user_id' => 1,
-            'content' => 'test',
+            'post_id' => 1,
         ];
-        DB::table('posts')->insert($item);
+        DB::table('likes')->insert($item);
         $item = [
             'user_id' => 2,
-            'content' => 'ぶｒｙｄさ',
+            'post_id' => 2,
         ];
-        DB::table('posts')->insert($item);
+        DB::table('like')->insert($item);
     }
 }

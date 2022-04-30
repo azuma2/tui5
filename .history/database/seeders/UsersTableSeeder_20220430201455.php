@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
         'email' => 'aaaaaaaa@mail.com',
         'password' => 'zzzzzz',
         ];
-        DB::table('users')->insert($item);
+        DB::table('user')->insert($item);
         $item = [
         'id' => '2',
         'name' => 'aa2',
