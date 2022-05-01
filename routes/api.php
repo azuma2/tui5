@@ -18,6 +18,9 @@ Route::get('/comment/show', [CommentController::class, 'show']);
 
 Route::post('/like/store', [LikeController::class, 'store']);
 Route::delete('/like/destroy', [LikeController::class, 'destroy']);
+Route::delete('/like/check', [LikeController::class, 'check']);
+
+Route::get('/like/check', [LikeController::class, 'check'])->name('like.check');
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
